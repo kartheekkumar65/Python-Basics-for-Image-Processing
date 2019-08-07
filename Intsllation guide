@@ -1,0 +1,56 @@
+Intsllation guide:
+1. Download Anaconda 3.7 version (if you are comfortable with 2.7 go for it, beginners start with 3.7) at https://www.anaconda.com/distribution/
+
+2. Installing Anaconda:
+For Windows:
+install the .exe file which was downloaded
+For Linux:
+in terminal, go to the directory in which the .sh file was downloaded, and type the following:
+bash ./<Downloaded filename>
+For macOS:
+install the .pkg file which was downloaded
+-You should now be able to find 'anaconda navigator' somewhere in your machine.
+-Open anaconda navigator and install spyder/jupyter notebook (if already not installed). Once installed, codes in python can be written in these interfaces.
+To open these interfaces, open terminal/anaconda prompt and type:
+spyder / jupyter notebook
+
+3. Libraries:
+
+In general the way to install libraries in python is by opening terminal/anaconda prompt and type:
+conda install <library name>
+OR
+pip install <library name>
+
+For example, to install the library matplotlib:
+conda install matplotlib
+OR
+pip install matplotlib
+
+Recommended: numpy, opencv-python, scipy, matplotlib
+
+If your OS is not supporting the new versions of above libraries, you can install old versions like : pip install opencv-python==4.0.0.21
+
+
+3. Importing libraries
+Even though while installing opencv we used the name opencv-python, while importing we use cv2
+
+import cv2           # The OpenCV library for opening and saving images
+import numpy as np   # Array manipulations and other math stuff
+from matplotlib import pyplot as plt # plotting graphs
+
+4. Using Libraries
+
+
+# reading the image in grayscale format
+img = cv2.imread('barbara.png', cv2.IMREAD_GRAYSCALE)
+
+cv2.imshow('original image', img)
+cv2.waitKey()
+cv2.destroyAllWindows()
+
+# Convert to normalized floating point
+out = cv2.normalize(img.astype('float'), None, 0.0, 1.0, cv2.NORM_MINMAX) 
+img_org = out.copy();
+
+
+
