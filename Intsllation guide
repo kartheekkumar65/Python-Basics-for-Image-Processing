@@ -40,17 +40,14 @@ from matplotlib import pyplot as plt # plotting graphs
 
 4. Using Libraries
 
+# import the necessary libraries
+from matplotlib import pyplot as plt # plotting graphs
+import matplotlib.image as mpimg
 
 # reading the image in grayscale format
-img = cv2.imread('barbara.png', cv2.IMREAD_GRAYSCALE)
-
-cv2.imshow('original image', img)
-cv2.waitKey()
-cv2.destroyAllWindows()
-
-# Convert to normalized floating point
-out = cv2.normalize(img.astype('float'), None, 0.0, 1.0, cv2.NORM_MINMAX) 
-img_org = out.copy();
+img = mpimg.imread('cameraman.tif')
+imgplot = plt.imshow(img, cmap='gray', vmin=0, vmax=255)
+plt.show()
 
 
 
